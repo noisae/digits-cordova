@@ -392,6 +392,11 @@
                             }
                         }
 
+                        var error_code = RegExp('[?&]error_code=([^&]*)').exec(url);
+                        if (error_code[1]){
+                            failCallback(error_code[1]);
+                        }
+
                         //Long poll the inAppBrowser for a response
                         setInterval(function(){
                             openWindow.executeScript({
@@ -404,7 +409,7 @@
 
                         //If we unsuccessfully got a response, this will call the failed Callback
                         if (!succeed){
-                            failCallback('failed');
+                            errorCallback('Exited without login');
                         }
                     });
 
