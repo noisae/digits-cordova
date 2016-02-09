@@ -1,5 +1,5 @@
-var argscheck = require('cordova/argscheck'),
-    exec = require('cordova/exec');
+var argscheck = cordova.require('cordova/argscheck'),
+    exec = cordova.require('cordova/exec');
 
 var safesmsExport = {};
 
