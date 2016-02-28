@@ -215,7 +215,7 @@
       "+967": "YE",
       "+260": "ZM",
       "+263": "ZW"
-    }   
+    }
 
     function findRegion(number){
         number = "" + number; //Make number to string
@@ -327,7 +327,7 @@
                 return this;
             },
             failCallback: function(cb){
-                if (typeof cb === 'function'){
+                if (typeof cb === 'function') {
                     failCallback = cb;
                 } else {
                     throw('failCallback(param) - param is expecting a function');
@@ -351,7 +351,6 @@
                 loadedCallback = finishedCallback;
 
                 if (options.autoProceed) {
-                    console.log(code);
                     openWindow.executeScript({
                         code : autoProceedCode
                     });
@@ -393,7 +392,7 @@
                         }
 
                         var error_code = RegExp('[?&]error_code=([^&]*)').exec(url);
-                        if (error_code[1]){
+                        if (error_code && error_code[1]){
                             failCallback(error_code[1]);
                         }
 
